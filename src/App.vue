@@ -1,17 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <HelloWorld :msg="msg"/>
+    <List :pageNum="pageNum"/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import HelloWorld from './components/HelloWorld.vue';
+import List from './components/List';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    List
+  },
+  data(){
+    return {
+      msg:"Welcome to Your Vue.js App",
+      pageNum:7,
+    }
   }
 }
 </script>
