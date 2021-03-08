@@ -2,18 +2,21 @@
   <div id="app">
     <HelloWorld :msg="msg"/>
     <List :pageNum="pageNum"/>
+    <ParentShow />
   </div>
 </template>
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
 import List from './components/List';
+import ParentShow from './components/child2parent/ParentShow';
 
 export default {
   name: 'App',
   components: {
     HelloWorld,
-    List
+    List,
+    ParentShow
   },
   data(){
     return {

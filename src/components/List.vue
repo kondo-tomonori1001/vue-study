@@ -1,5 +1,6 @@
 <template>
   <div>
+    <p>リストレンダリング</p>
     <p>ページ数は{{ pageNum }}ページ</p>
     <ul class="list">
       <li v-for='page in pageNum' :key=page>{{ page }}</li>
