@@ -1,6 +1,6 @@
 <template>
   <label for="text">
-    <input id="text" v-model="text" type="text" @change="updateValue">
+    <input id="text" type="text" @keyup="updateValue" />
   </label>
 </template>
 
@@ -9,21 +9,22 @@ export default {
   props: {
     text: {
       type: String,
-      required: true,
     },
-    model: {
-      prop: 'value',
-      event: 'change'
-    }
+  },
+  // 親のv-modelと紐づけ
+  model: {
+    prop: "text",
+    event: "event",
   },
   methods: {
+    // inputタグに入力された時（keyup）で発火するイベント
     updateValue(e) {
-      this.$emit('change', e.target.value);
-    }
-  }
-}
+      // e.target.valueを親に渡す
+      this.$emit("event", e.target.value);
+    },
+  },
+};
 </script>
 
 <style>
-
 </style>

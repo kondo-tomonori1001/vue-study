@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>{{ text }}</p>
-    <ChildInput v-model="text" :value="text" />
+    <ChildInput v-model="text" :value="text" @key-up="text"/>
   </div>
 </template>
 
